@@ -1,0 +1,14 @@
+Package: strviewr
+Type: Package
+Title: Downloads images from Google Streetview in sequences.
+Version: 0.1.0
+Author: Jiri Stipl
+Maintainer: Jiri Stipl <stiplj@student.cuni.cz>
+Description: This package serves for downloading sequences of images from Google Streetview.
+Depends: jsonlite, RCurl, googleway
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+NeedsCompilation: no
+Packaged: 2018-09-11 23:48:41 UTC; Jirka

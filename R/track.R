@@ -118,18 +118,6 @@ stview_query <- function(loc, heading, pitch=0, size=c(600, 300), fov=120, key=k
   final_query
 }
 
-download_place <- function(place_code, loc, folder, step = 30) {
-  if (is.numeric(place_code)) {
-    place_code <- sprintf("%04s", place_code)
-  }
-  fn_template <- file.path(folder, "place_%s_%03d.jpg")
-  for (dir in seq(0, 360 - step, step)) {
-    fn <- sprintf(fn_template, place_code, dir)
-    u <- stview_query(loc = loc, size = c(600, 600), heading = dir, key = key)
-    download.file(u, fn, mode = "wb")
-  }
-}
-
 addpoint <- function(loc, metloc, rank) {
   
   # creates mapApi text representing markers for computed and real location of photo and path linking them

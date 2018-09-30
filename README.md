@@ -46,7 +46,6 @@ Downloads two sequances of images from Google Streetview between given coordinat
 |`start`       |Start location as vector `c(lat,lng)`|  
 |`end`        |End location as vector `c(lat,lng)`|
 |`track_code`  |A number identifying the track to be downloaded, its passed to filenames of images|  
-|`map`|         (map == 0) => downloads only images without map;  (map == 1) =>  downloads images and map of their locations; (map == 2)                  => downloads only summary map| 
 |`folder`|      Defaultly it is current working directory|  
 |`pace`|        Number of metres between coordinates used to download images|  
 |`fineness`|    Number of images with adjusted heading before curve|  

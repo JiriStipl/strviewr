@@ -7,7 +7,6 @@
 #' @param start vector c(lat,lng)
 #' @param end vector c(lat,lng)
 #' @param track_code A number identifying the track to be downloaded, its passed to filenames of images
-#' @param map  (map == 0) => downloads only images without map;  (map == 1) =>  downloads images and map of their locations; (map == 2) => downloads only summary map
 #' @param folder Defaultly it is current working directory
 #' @param pace Number of metres between coordinates used to download images
 #' @param fineness number of images with adjusted heading before curve
@@ -22,11 +21,12 @@
 #' @export
 #' @examples
 #' download_track(c(50.080266, 14.447034), c(50.081416, 14.447790), 1, key = "AIzaSyCIPkCIWA0ZDQ4dDS45kiZcKpasd-t-Q3E")
-#' download_track(c(50.064281, 14.509821), c(50.065542, 14.507479), 2, pace = 30, map = 2, key = "AIzaSyCIPkCIWA0ZDQ4dDS45kiZcKpasd-t-Q3E")
+#' download_track(c(50.064281, 14.509821), c(50.065542, 14.507479), 2, pace = 30, key = "AIzaSyCIPkCIWA0ZDQ4dDS45kiZcKpasd-t-Q3E")
 #' download_track(c(50.065476, 14.512228), c(50.065001, 14.514193), 3, adjust = TRUE, fineness = 7,key = "AIzaSyCIPkCIWA0ZDQ4dDS45kiZcKpasd-t-Q3E")
 #' download_track(c(-16.704637, -49.262431),c(-16.702592, -49.263336), 4,key = "AIzaSyCIPkCIWA0ZDQ4dDS45kiZcKpasd-t-Q3E")
 
-download_track <- function(start, end, track_code, folder=getwd(), pace=20, fineness=5, map=1, adjust=FALSE,key) {
+download_track <- function(start, end, track_code, folder=getwd(), pace=20, fineness=5, adjust=FALSE,key) {
+  map<-1
   library(googleway)
   library(jsonlite)
   library(RCurl)

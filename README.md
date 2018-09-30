@@ -25,8 +25,8 @@ Downloads 360 degrees panorama sequence of images with defined change in angle o
 |:---|:---|
 |`loc`         |Location as vector `c(lat,lng)`|  
 |`place_code`|  A number identifying the place to be downloaded, its passed to filenames of images|  
-|`folder`|      Defaultly it is the current working directory|  
-|`step`|        The angle between two images in degrees|  
+|`folder`|      Download location as path to a folder, defaultly it is the current working directory|  
+|`step`|        The angle between two images in degrees, defaultly it is set to 30|  
 |`key`|         Your Google Maps API key|  
 
 **Output:** Returns nothing.
@@ -45,12 +45,11 @@ Downloads two sequances of images from Google Streetview between given coordinat
 |:---|:---|
 |`start`       |Start location as vector `c(lat,lng)`|  
 |`end`        |End location as vector `c(lat,lng)`|
-|`track_code`  |A number identifying the track to be downloaded, its passed to filenames of images|  
-|`folder`|      Defaultly it is current working directory|  
-|`pace`|        Number of metres between coordinates used to download images|  
-|`fineness`|    Number of images with adjusted heading before curve|  
-|`pace`|        Number of metres between images|  
-|`adjust`|      If TRUE script tryes to adjust headings in curves|  
+|`track_code`  |A number identifying the track to be downloaded, it is passed to filenames of images|  
+|`folder`|      Download location as path to a folder, defaultly it is the current working directory|  
+|`pace`|        Number of metres between coordinates used to download images, defaultly it is 20|  
+|`fineness`|    Number of images with adjusted heading before curve, defaultly it is 5|  
+|`adjust`|      If TRUE script tryes to adjust headings in curves, defaultly set to FALSE|  
 |`key`|         Your Google Maps API key|  
 
 **Output:** Returns a vector of deviances between a calculated and real location of downloaded images. Values below 70 are considered a sufficient match.

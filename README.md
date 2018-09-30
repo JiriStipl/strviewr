@@ -63,7 +63,7 @@ to the red marks, are positions of the actually downloaded images.
 Key in this example is only ilustrational, in order to use the package you will have to acquire your own, see chapter **Prerequisites**,
 ```
 #' download_track(c(50.080266, 14.447034), c(50.081416, 14.447790),track_code = 1, key = "AIzaSyCIPkCIWA0ZDQ4dDS45kiZcKpasd-t-Q3E")
-#' download_track(c(50.064281, 14.509821), c(50.065542, 14.507479), track_code = 2, pace = 30, map = 2, key = "AIzaSyCIPkCIWA0ZDQ4dDS45kiZcKpasd-t-Q3E")
+#' download_track(c(50.064281, 14.509821), c(50.065542, 14.507479), track_code = 2, pace = 30, key = "AIzaSyCIPkCIWA0ZDQ4dDS45kiZcKpasd-t-Q3E")
 #' download_track(c(50.065476, 14.512228), c(50.065001, 14.514193), track_code = 3, adjust = TRUE, fineness = 7,key = "AIzaSyCIPkCIWA0ZDQ4dDS45kiZcKpasd-t-Q3E")
 ```
 ## License

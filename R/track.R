@@ -13,6 +13,7 @@
 #' @param pace metres between images
 #' @param adjust If TRUE script tryes to adjust headings in curves
 #' @param key Your Google Maps API key
+#' @param map map == 0 => downloads only photos; map == 1 => downloads photos and map of their locations(default); map == 2 => downloads only map
 #' @return Returnes vector of deviances between calculated and real location of downloaded images. Values bellow 70 are considered a sufficient match.
 #' @details This function first finds the route between two corrdinates using Google Directions api, then it calculates positions of images to be downloaded alongside the route so they are in predefined spacing.
 #' afterwards it downloads the images and creates summary map. In the map the bigger red marks with letters stand for calculated positions of images and the smaller blue marks, that are connected with green line
@@ -25,8 +26,7 @@
 #' download_track(c(50.065476, 14.512228), c(50.065001, 14.514193), 3, adjust = TRUE, fineness = 7,key = "AIzaSyCIPkCIWA0ZDQ4dDS45kiZcKpasd-t-Q3E")
 #' download_track(c(-16.704637, -49.262431),c(-16.702592, -49.263336), 4,key = "AIzaSyCIPkCIWA0ZDQ4dDS45kiZcKpasd-t-Q3E")
 
-download_track <- function(start, end, track_code, folder=getwd(), pace=20, fineness=5, adjust=FALSE,key) {
-  map<-1
+download_track <- function(start, end, track_code, folder=getwd(), pace=20, fineness=5, adjust=FALSE,map=1,key) {
   library(googleway)
   library(jsonlite)
   library(RCurl)

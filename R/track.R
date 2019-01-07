@@ -79,7 +79,7 @@ download_track <- function(start, end, track_code, folder=getwd(), pace=20, fine
         download.file(u, fn, mode = "wb")
       }
       if ((map == 1 | map == 2) & d == 0) {
-        trueloc<-metloc(loc)
+        trueloc<-metloc(loc, key=key)
         mapquerry <- paste0(mapquerry, addpoint(loc, trueloc, rank = (s) %% 26))
         errors[length(errors)+1]<- round(distloc(loc,trueloc)*1000,0)
         

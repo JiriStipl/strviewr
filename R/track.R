@@ -64,13 +64,13 @@ download_track <- function(start, end, track_code, folder=getwd(), pace=20, fine
   if (is.numeric(track_code)) {
     track_code <- sprintf("%04s", track_code)
   }
-  fn_template <- file.path(folder, "track_%s_%d_%03d_%04d.jpg")
+  fn_template <- file.path(folder, "track_%s_%d_%03d.jpg")
   fn_template_map <- file.path(folder, "track_%s_map.jpg")
   for (s in seq(1, nrow(posits))) {
     for (d in c(0, 1)) {
       loc <- posits[s, ]
       dir <- posits[s, 5]
-      fn <- sprintf(fn_template, track_code, d, s, dir)
+      fn <- sprintf(fn_template, track_code, d, s)
       u <- stview_query(
         loc = loc, size = c(600, 600),
         heading = (dir + d * 180) %% 360, key = key

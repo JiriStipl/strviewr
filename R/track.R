@@ -129,7 +129,7 @@ addpoint <- function(loc, metloc, rank) {
   path <- paste0("&path=color:green|weight:4|", loc, "|", metloc)
   paste0(metloc_marker, loc_marker, path)
 }
-metloc <- function(loc) {
+metloc <- function(loc,key) {
   
   # returnes real location of streetview image closest to given coordinates
   

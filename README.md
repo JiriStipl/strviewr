@@ -17,6 +17,7 @@ install_github("jiristipl/strviewr")
 
 ### Documentation
 You can view the documentation in RStudio by executing `?download_place` or `?download_track`. <br />
+Note: if you would like to acquire coordinates from link to point on Google Maps, for example "https://www.google.com/maps/place/50%C2%B004'50.2%22N+14%C2%B026'31.3%22E/@50.080717,14.4420109,19z/data=!4m6!3m5!1s0x0:0x0!7e2!8m2!3d50.0806176!4d14.4420349" always use the coordinates at the end of the link (not the coordinates right after the "@") converted to format c(lat,lng) => c(50.0806176,14.4420349)
 
 #### download_place(loc, place_code, folder = getwd(), step = 30, key)
 Downloads 360 degrees panorama sequence of images with defined change in angle of view
@@ -39,7 +40,7 @@ download_place(loc=c(50.089360, 14.415233),place_code=1, step=35, key="AIzaSyCIP
 <br />
 
 #### download_track(start, end, track_code, folder=getwd(), pace=20, fineness=5, map=1, adjust=FALSE,key)
-Downloads two sequances of images from Google Streetview between given coordinates, one in each direction and also can create summary maps.
+Downloads two sequances of images from Google Streetview between given coordinates, one in each direction and also can create summary maps. Filenames creation: sprintf(track_%s_%d_%03d.jpg, track_code, direction, order), track_code from user input, direction is 1 for one direction and 0 for the opposite one (both are downloaded), order = number documenting succesion of the images
 
 | Parameter | Description |
 |:---|:---|
@@ -50,6 +51,7 @@ Downloads two sequances of images from Google Streetview between given coordinat
 |`pace`|        Number of metres between coordinates used to download images, defaultly it is 20|  
 |`fineness`|    Number of images with adjusted heading before curve, defaultly it is 5|  
 |`adjust`|      If TRUE script tryes to adjust headings in curves, defaultly set to FALSE|  
+|`map`|      map == 0 => downloads only photos; map == 1 => downloads photos and map of their locations(default); map == 2 => downloads only map|  
 |`key`|         Your Google Maps API key|  
 
 **Output:** Returns a vector of deviances between a calculated and real location of downloaded images. Values below 70 are considered a sufficient match.

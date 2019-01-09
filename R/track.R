@@ -35,7 +35,7 @@ download_track <- function(start, end, track_code, folder=getwd(), pace=20, fine
   # map == 0 = download only photos; map == 1 = download photos and map of their locations; map == 2 = download only map
   errors<- vector()
   # creates dataframe containing coordinates of all photos
-  callback <- google_directions(start, end, key = key)
+  callback <- google_directions(start, end, key = key, mode="walking")
   places_n <- (sum(callback$routes$legs[[1]]$steps[[1]]$distance$value) / pace)
   past <- c(0, callback$routes$legs[[1]]$steps[[1]]$distance$value)
   i <- 0

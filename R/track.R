@@ -107,7 +107,7 @@ stview_query <- function(loc, heading, pitch=0, size=c(600, 300), fov=120, key=k
   }
   url <- "https://maps.googleapis.com/maps/api/streetview?"
   query <- sprintf(
-    "size=%s&location=%f,%f&heading=%g&pitch=%f&fov=%d&key=%s",
+    "size=%s&location=%f,%f&heading=%g&pitch=%f&fov=%g&key=%s",
     qsize, # WxH
     loc[1], loc[2], # lng,lat
     heading, # heading 0-360 (0=N, 90=E)

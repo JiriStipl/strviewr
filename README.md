@@ -70,3 +70,5 @@ Key in this example is only ilustrational, in order to use the package you will 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## This package was supported by Czech Science Foundation (GA 16-07983S)

@@ -4,7 +4,7 @@ Title: Downloads images from Google Streetview in sequences.
 Version: 0.1.0
 Author: Jiri Stipl
 Maintainer: Jiri Stipl <stiplj@student.cuni.cz>
-Description: This package serves for downloading sequences of images from Google Streetview.
+Description: This package serves for downloading sequences of images from Google Streetview. This package was supported by Czech Science Foundation (GA 16-07983S)
 Depends: jsonlite, RCurl, googleway
 License: MIT
 Encoding: UTF-8
